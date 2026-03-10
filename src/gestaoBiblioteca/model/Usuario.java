@@ -5,19 +5,28 @@ package gestaoBiblioteca.model;
 // mas serve como base para as outras classes. Ela deve conter um atributo id e métodos para acessar e modificar esse id.//
 //C) Implementar a interface Autenticavel na classe Usuario, para que os usuários possam ser autenticados no sistema.//
 public abstract class Usuario implements Autenticavel{
-    private int id;
+    private long id;
+    private String nome;
+    private String email;
+    private String login;
+    private String senha;
+    private Boolean primeiroAcesso = true;
+    private Perfil perfil; // ADMIN, PROFESSOR, ALUNO//
 
-    public void setId(int id) {
-        if (id <= 0) {
-            throw new 
-            IllegalArgumentException("ID deve ser um número positivo.");
+    public Usuario(long id , String nome, String email, 
+        String login, String senha, Perfil perfil) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.login = login;
+        this.senha = senha;
+        this.perfil = perfil;
+    }
+
+    public void setId(long id) {
+        if (id<=0) {
+            throw new IllegalArgumentException("ID deve ser um número positivo.");
         }
         this.id = id;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    
 }
