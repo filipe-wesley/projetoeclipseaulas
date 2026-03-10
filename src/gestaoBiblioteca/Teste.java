@@ -1,6 +1,6 @@
 package gestaoBiblioteca;
-public class Teste{
+public class Teste {
     public static void main(String[] args) {
-        System.out.println("Teste de classe livro");
+        System.out.println("Teste de Classe Livro");
     }
-}
+}  
